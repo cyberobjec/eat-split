@@ -1,1 +1,21 @@
 @import 'tailwindcss';
+
+@layer components {
+  .input-base {
+    @apply px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+}
+
+@layer utilities {
+  .line-sharp {
+    @apply w-[0.5px] h-screen bg-black opacity-30 mt-4;
+    mask: linear-gradient(
+      to bottom,
+      transparent 0px,
+      black 50px,
+      /* 顶部尖锐效果 - 延长渐变距离 */ black calc(100% - 50px),
+      transparent 100% /* 底部尖锐效果 - 延长渐变距离 */
+    );
+    -webkit-mask: linear-gradient(to bottom, transparent 0px, black 50px, black calc(100% - 50px), transparent 100%);
+  }
+}
